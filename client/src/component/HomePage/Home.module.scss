@@ -1,0 +1,100 @@
+.home {
+  height: 100vh;
+  // background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  font-family: "poppins";
+
+  .navbar {
+    flex: 0.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 1em;
+
+    .link {
+      text-decoration: none;
+      color: white;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .herosection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+    .leftsection {
+      flex: 1;
+      margin-left: 2em;
+      // background-color: aliceblue;
+      h2{
+        font-size: 2em;
+      }
+      p{
+        font-size: 1.2em;
+      }
+    }
+    .rightsection {
+      flex: 1;
+      // background-color: aliceblue;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      .bannersection {
+        background-color: rgb(237, 237, 237);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 400px;
+        border-radius: 2em;
+        gap: 1em;
+        .heading {
+          h3 {
+            font-size: 1.5em;
+            margin: 0 0;
+          }
+        }
+
+        .description {
+        }
+        .bottomsection {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5em;
+          a {
+            text-align: center;
+            text-decoration: none;
+            width: 50%;
+            padding: 0.5em;
+            border-radius: 0.5em;
+            background-color: rgb(255, 0, 0);
+            color: rgb(255, 255, 255);
+
+            &:hover {
+              color: rgb(232, 226, 226);
+            }
+
+            &:active {
+              color: rgb(255, 255, 255);
+            }
+          }
+
+          .counter{
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+  }
+}

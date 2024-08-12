@@ -1,0 +1,196 @@
+.main {
+  height: 100vh;
+  // background-color: rgb(252, 160, 41);
+  .wrapper {
+    // background-color: aquamarine;
+    max-width: 1300px;
+    margin: auto;
+    margin-top: 20px;
+    .heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+      font-family: "poppins";
+      a{
+        text-decoration: none;
+        
+      }
+      // height: 80px;
+    }
+
+    .bannerEditingContainer {
+      // background-color: antiquewhite;
+      border-radius: 1em;
+      display: flex;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.8);
+      .editingBlockLeft {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(244, 242, 239);
+        border-radius: 1em;
+        .topsection {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2em;
+          h3 {
+            font-size: 1.2em;
+          }
+          button {
+            padding: 0.5em;
+            width: 7em;
+            border: none;
+            border-radius: 1em;
+            cursor: pointer;
+            font-family: "poppins";
+            background-color: black;
+            color: rgb(199, 189, 189);
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+            &:hover {
+              color: white;
+            }
+
+            &:active {
+              transform: scale(0.95); /* Slightly reduce size */
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+            }
+          }
+        }
+
+        .bannercontext {
+          padding-left: 1em;
+          display: flex;
+          font-family: "poppins";
+          .leftTitleSection {
+            display: flex;
+            flex-direction: column;
+            input {
+              border: none;
+              text-align: center;
+            }
+            .titleContainer {
+              display: flex;
+              align-items: center;
+              gap: 1em;
+              h5 {
+                font-size: 1.5em;
+              }
+              input {
+                width: 80%;
+                padding: 1em;
+                border-radius: 1em;
+              }
+            }
+            .DescriptionContainer {
+              display: flex;
+              align-items: center;
+              gap: 1em;
+              h5 {
+                font-size: 1.5em;
+              }
+              textarea {
+                height: 10em;
+                width: 32em;
+                // vertical-align: top;
+                border-radius: 1em;
+                padding: 0.8em;
+                border: none;
+              }
+            }
+            .counterContainer {
+              display: flex;
+              align-items: center;
+              gap: 1em;
+              h5 {
+                font-size: 1.2em;
+              }
+              .counterContent {
+                display: flex;
+                gap: 0.5em;
+                input {
+                  border-radius: 0.5em;
+                  padding: 0.5em;
+                }
+              }
+            }
+
+            .ButtonContainer {
+              display: flex;
+              align-items: center;
+              gap: 2em;
+              h5 {
+                font-size: 1.2em;
+              }
+              .buttonContent {
+                display: flex;
+                gap: 1em;
+                input {
+                  border-radius: 0.5em;
+                  padding: 0.5em;
+                }
+                .link {
+                  width: 30em;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .bannerDisplayBlock {
+        flex: 1;
+        // background-color: rgb(196, 213, 188);
+        display: flex;
+        flex-direction: column;
+        // gap: 0.5em;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em;
+        font-family: "poppins";
+        .displaywrapper{
+          border-radius: 1em;
+          width: 300px;
+          background-color: aliceblue;
+          .topsection{
+            text-align: center;
+          }
+          .description{
+            text-align: center;
+            padding: 0 0.5em;
+          }
+          .bottomsection{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+            a{
+              text-align: center;
+              text-decoration: none;
+              width: 50%;
+              padding: 0.5em;
+              border-radius: 0.5em;
+              background-color: rgb(255, 0, 0);
+              color: rgb(255, 255, 255);
+
+              &:hover{
+                color: rgb(232, 226, 226);
+              }
+
+              &:active{
+                color: rgb(255, 255, 255);
+              }
+            }
+
+            .counter{
+              margin-bottom: 2em;
+            }
+
+          }
+        }
+        
+      }
+    }
+  }
+}
