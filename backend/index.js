@@ -1,12 +1,22 @@
 require('dotenv').config();
+// require('./Database/config.js')
 const express = require('express');
-
+const cors = require('cors');
 const app=express();
 const PORT = process.env.PORT;
 
+const BannerRoutes = require('./Routes/bannerRoute')
+app.use(express.json());
+app.use(cors({
+    origin:[process.env.FRONTEND_URL],
+    methods:["GET","POST","PUT","DELETE"]
+}))
+
 app.get('/',(req,res)=>{
-    res.send('its working')
+    res.send('Welcome to Kuldeep Assginment')
 })
+
+app.use('/api/banner',BannerRoutes);
 
 app.listen(PORT,(error)=>{
     if(error){
