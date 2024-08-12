@@ -7,9 +7,9 @@ const getBannerDetails = async(req,res)=>{
         const result = await getBannerDetailsService();
         console.log(result);
         if(result.status){
-            res.send(result.data[0])
+            return res.send(result.data[0])
         }else{
-            res.send(result)
+            return res.send(result)
         }
         
     }catch(error){
