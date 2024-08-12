@@ -20,8 +20,8 @@ const getBannerDetailsService = async () => {
 
 const updateBannerDetailService = async (bannerdetails) => {
   try {
-    const { title, description, days, hours, minutes, seconds, btext, blink ,id } = bannerdetails;
-
+    const { title, description, days, hours, minutes, seconds, btext, blink } = bannerdetails;
+    const id=1;
     let squery = `UPDATE tbl_bannercontent
         SET
         btitle = '${title}',
