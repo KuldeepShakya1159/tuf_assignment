@@ -10,7 +10,7 @@ const getBannerDetailsService = async () => {
     if (result.length > 0) {
       return { status: true, data: result };
     } else {
-      return {status:false,data:"no data found"};
+      return { status: false, data: "no data found" };
     }
   } catch (error) {
     console.log(error, "Error in bannerService");
@@ -20,31 +20,35 @@ const getBannerDetailsService = async () => {
 
 const updateBannerDetailService = async (bannerdetails) => {
   try {
-    const { title, description, days, hours, minutes, seconds, btext, blink } = bannerdetails;
-    const id=1;
+    let { title, description, days, hours, minutes, seconds, btext, blink } =bannerdetails;
+    title = title.replace(/'/g, "''");
+    description = description.replace(/'/g, "''");
+    btext = btext.replace(/'/g, "''");
+    blink = blink.replace(/'/g, "''");
+    const id = 1;
+
     let squery = `UPDATE tbl_bannercontent
         SET
-        btitle = '${title}',
-        bdescription = '${description}',
-        btime_days=${days},
-        btime_hours=${hours},
-        btime_minutes=${minutes},
-        btime_seconds=${seconds},
-        buttontext='${btext}',
-        buttonlink='${blink}'
+        title = '${title}',
+        description = '${description}',
+        days=${days},
+        hours=${hours},
+        minutes=${minutes},
+        seconds=${seconds},
+        btext='${btext}',
+        blink='${blink}'
         
         WHERE id = ${id}
      RETURNING * `;
 
-       console.log('---Executing Update Query-----------',squery);
+    console.log("---Executing Update Query-----------", squery);
     const result = await db.query(squery);
-    console.log("db result>>>>>",result)
-    if(result.length>0){
-        return {status:true,data:result};
-    }else{
-        return {status:false,data:'failed to update'}
+    console.log("db result>>>>>", result);
+    if (result.length > 0) {
+      return { status: true, data: result };
+    } else {
+      return { status: false, data: "failed to update" };
     }
-    
   } catch (error) {
     console.log(error.message);
     throw error;

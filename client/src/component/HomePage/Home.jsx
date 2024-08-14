@@ -23,15 +23,15 @@ const Home = () => {
         result = await result.json();
         if (result) {
           setTimeLeft({
-            days: result.btime_days,
-            hours: result.btime_hours,
-            minutes: result.btime_minutes,
-            seconds: result.btime_seconds,
+            days: result.days,
+            hours: result.hours,
+            minutes: result.minutes,
+            seconds: result.seconds,
           });
-          setTitle(result.btitle);
-          setDescription(result.bdescription);
-          setBtnText(result.buttontext);
-          setBtnLink(result.buttonlink);
+          setTitle(result.title);
+          setDescription(result.description);
+          setBtnText(result.btext);
+          setBtnLink(result.blink);
         }
       } catch (error) {
         console.error("Error fetching banner data:", error);
@@ -80,7 +80,7 @@ const Home = () => {
 
       <div className={styles.herosection}>
         <div className={styles.leftsection}>
-          <h2>Hire Me</h2>
+          <h2>Welcome to the Assignment</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
             consequuntur reprehenderit necessitatibus cum porro eos debitis,

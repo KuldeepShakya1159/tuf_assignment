@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Admin.module.scss";
 import { useBanner } from "../../context/bannercontext";
+import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
   const [title, setTitle] = useState("");
@@ -15,6 +16,7 @@ const Admin = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const navigate = useNavigate();
   
 
 
@@ -25,7 +27,7 @@ const Admin = () => {
       console.log('error');
       setError(true);
     }else{
-
+      setError(false);
       try{
         let result = await fetch(process.env.REACT_APP_UPDATE_BANNER_DETAILS,{
           method:"POST",
@@ -36,7 +38,11 @@ const Admin = () => {
         }
         )
         result = await result.json();
+        if(result.status){
+          navigate('/');
         console.log(result);
+        }
+        
       }catch(error){
         console.log(error)
       }
