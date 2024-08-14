@@ -19,10 +19,8 @@ const Home = () => {
   useEffect(() => {
     const fetchBannerData = async () => {
       try {
-        console.log('getDetailsHit>>>>>>',process.env.REACT_APP_GET_BANNER_DETAILS)
         let result = await fetch(process.env.REACT_APP_GET_BANNER_DETAILS);
         result = await result.json();
-        console.log(result)
         if (result) {
           setTimeLeft({
             days: result.days,
