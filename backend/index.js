@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 const BannerRoutes = require('./Routes/bannerRoute')
 app.use(express.json());
 app.use(cors({
-    origin:[process.env.FRONTEND_URL],
+    origin:['https://tuf-assignmentfrontend-kuldeep-shakyas-projects.vercel.app'],
     methods:["GET","POST","PUT","DELETE"]
 }))
 
