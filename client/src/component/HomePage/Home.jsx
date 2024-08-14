@@ -19,8 +19,10 @@ const Home = () => {
   useEffect(() => {
     const fetchBannerData = async () => {
       try {
+        console.log('getDetailsHit>>>>>>',process.env.REACT_APP_GET_BANNER_DETAILS)
         let result = await fetch(process.env.REACT_APP_GET_BANNER_DETAILS);
         result = await result.json();
+        console.log(result)
         if (result) {
           setTimeLeft({
             days: result.days,
@@ -34,7 +36,7 @@ const Home = () => {
           setBtnLink(result.blink);
         }
       } catch (error) {
-        console.error("Error fetching banner data:", error);
+        console.error("Error fetching banner data:", error.message);
       }
     };
     fetchBannerData();
